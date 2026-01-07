@@ -3,6 +3,7 @@ import { AnimatedDivider } from "./AnimatedDivider";
 interface ProjectCardProps {
   title: string;
   work: string[];
+  image: string;
   isVisible: boolean;
   index: number;
 }
@@ -14,7 +15,7 @@ const delayClasses = [
   "animation-delay-900",
 ];
 
-export function ProjectCard({ title, work, isVisible, index }: ProjectCardProps) {
+export function ProjectCard({ title, work, image, isVisible, index }: ProjectCardProps) {
   return (
     <div
       className={`project-card group relative bg-secondary-dark-gray rounded-lg overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer ${
@@ -23,12 +24,11 @@ export function ProjectCard({ title, work, isVisible, index }: ProjectCardProps)
     >
       {/* Project Image */}
       <div className="relative aspect-4/3 bg-linear-to-br from-primary/10 to-secondary overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-gray-600">
-          <div className="text-center">
-            <div className="text-6xl mb-2">🎨</div>
-            <p className="text-sm">Project Image</p>
-          </div>
-        </div>
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Project Info */}

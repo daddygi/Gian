@@ -15,25 +15,25 @@ const projects: Project[] = [
     id: "1",
     title: "Konek",
     work: ["Fullstack Developer"],
-    image: "/images/projects/project-1.jpg",
+    image: "/konek.png",
   },
   {
     id: "2",
     title: "Outlink",
     work: ["Fullstack Developer"],
-    image: "/images/projects/project-2.jpg",
+    image: "/outlink.png",
   },
   {
     id: "3",
     title: "FriendGPT",
     work: ["Frontend Developer"],
-    image: "/images/projects/project-3.jpg",
+    image: "friendgpt.png",
   },
   {
     id: "4",
     title: "GG Capital",
     work: ["Backend Developer"],
-    image: "/images/projects/project-4.jpg",
+    image: "/ggcap.png",
   },
 ];
 
@@ -82,6 +82,7 @@ export function ProjectsHighlight() {
               key={project.id}
               title={project.title}
               work={project.work}
+              image={project.image}
               isVisible={isVisible}
               index={index}
             />
