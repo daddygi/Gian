@@ -1,36 +1,13 @@
-import { useEffect, useRef, useState } from "react";
 import { Button } from "./Button";
 import { DeveloperIllustration } from "./DeveloperIllustration";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export function About() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3, rootMargin: "-100px" }
-    );
-
-    const currentSection = sectionRef.current;
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, []);
+  const { isVisible, ref } = useScrollAnimation();
 
   return (
     <section
-      ref={sectionRef}
+      ref={ref}
       className="relative py-16 md:py-24 px-4 sm:px-6 md:px-10 bg-secondary-dark-gray overflow-hidden"
     >
       {/* Decorative blur glows */}
