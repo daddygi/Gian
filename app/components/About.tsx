@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./Button";
+import { DeveloperIllustration } from "./DeveloperIllustration";
 
 export function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,62 +71,7 @@ export function About() {
         </div>
 
         <div className="relative flex justify-center md:justify-end">
-          <div
-            className={`relative w-64 sm:w-80 md:w-96 ${
-              isVisible ? "animate-fade-in-up animation-delay-450" : "opacity-0"
-            }`}
-          >
-            {/* Top-right horizontal pill */}
-            <svg
-              className={`absolute -top-8 -right-16 md:-top-12 md:-right-20 w-32 h-16 md:w-40 md:h-20 z-10 ${
-                isVisible ? "animate-fade-in animation-delay-600" : "opacity-0"
-              }`}
-              viewBox="0 0 160 80"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="156"
-                height="76"
-                rx="38"
-                fill="none"
-                stroke="#ff9143"
-                strokeWidth="2"
-                opacity="0.6"
-                className={isVisible ? "animate-draw-pill-horizontal-delayed" : "pill-hidden"}
-              />
-            </svg>
-
-            {/* Bottom-left vertical pill */}
-            <svg
-              className={`absolute -bottom-10 -left-12 md:-bottom-14 md:-left-16 w-16 h-40 md:w-20 md:h-56 z-10 ${
-                isVisible ? "animate-fade-in animation-delay-600" : "opacity-0"
-              }`}
-              viewBox="0 0 80 224"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="76"
-                height="220"
-                rx="38"
-                fill="none"
-                stroke="#ff9143"
-                strokeWidth="2"
-                opacity="0.6"
-                className={isVisible ? "animate-draw-pill-vertical-delayed" : "pill-hidden"}
-              />
-            </svg>
-
-            <div className="relative aspect-3/4 bg-gray-700 rounded-lg overflow-hidden z-0">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                <div className="text-center">
-                  <div className="text-5xl mb-3">📷</div>
-                  <p className="text-xs">Your photo here</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DeveloperIllustration isVisible={isVisible} />
         </div>
       </div>
     </section>
