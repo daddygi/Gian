@@ -1,5 +1,5 @@
-import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
+import { Button } from "./Button";
 
 export function Hero() {
   return (
@@ -16,13 +16,14 @@ export function Hero() {
           Building <span className="text-primary">Digital Solutions</span>
         </h1>
 
-        <Link
+        <Button
           to="/works"
-          className="inline-flex items-center gap-2 md:gap-3 bg-primary hover:bg-[#ff7d2e] text-white font-medium px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-full transition-colors uppercase tracking-wider text-xs md:text-sm animate-fade-in-up animation-delay-300"
+          variant="primary"
+          icon={<ArrowRight className="w-4 h-4 md:w-5 md:h-5" />}
+          className="px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 uppercase tracking-wider text-xs md:text-sm animate-fade-in-up animation-delay-300"
         >
           Explore Works
-          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-        </Link>
+        </Button>
       </div>
     </section>
   );

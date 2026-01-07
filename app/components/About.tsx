@@ -1,5 +1,5 @@
-import { Link } from "react-router";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "./Button";
 
 export function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,14 +58,15 @@ export function About() {
             range of work, spanning web development and software engineering.
           </p>
 
-          <Link
+          <Button
             to="/about"
-            className={`inline-block bg-primary hover:bg-[#ff7d2e] text-white font-medium px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors text-sm md:text-base ${
+            variant="primary"
+            className={`px-8 md:px-10 py-3 md:py-4 text-sm md:text-base ${
               isVisible ? "animate-fade-in-up animation-delay-300" : "opacity-0"
             }`}
           >
             Discover More About Me
-          </Link>
+          </Button>
         </div>
 
         <div className="relative flex justify-center md:justify-end">
