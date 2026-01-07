@@ -7,7 +7,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-br from-secondary-black via-background to-background opacity-60"></div>
 
       <div className="absolute top-10 left-3 sm:left-5 md:top-20 md:left-10 w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-primary/20 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-10 right-3 sm:right-5 md:bottom-20 md:right-10 w-52 h-52 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-32 right-3 sm:right-5 md:bottom-40 md:right-10 w-52 h-52 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[120px]"></div>
 
       <div className="relative z-10 max-w-7xl px-2 sm:px-4">
         <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 sm:mb-8 md:mb-12 animate-fade-in-up">

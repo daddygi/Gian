@@ -33,8 +33,8 @@ export function About() {
       className="relative py-16 md:py-24 px-4 sm:px-6 md:px-10 bg-secondary-dark-gray overflow-hidden"
     >
       {/* Decorative blur glows */}
-      <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-primary/15 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+      <div className="absolute top-32 left-10 md:top-40 md:left-10 w-48 h-48 md:w-72 md:h-72 bg-primary/15 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-32 right-10 md:bottom-40 md:right-10 w-64 h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[120px]"></div>
 
       <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8 items-center">
         <div className="space-y-6 md:space-y-8">
