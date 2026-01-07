@@ -24,7 +24,7 @@ export function Welcome() {
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
               What&apos;s next?
             </p>
-            <p>staging branch</p>
+            <p>dev branch</p>
             <ul>
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
