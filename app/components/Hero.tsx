@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative flex flex-col items-center justify-center min-h-[70vh] md:min-h-[80vh] px-3 sm:px-4 md:px-8 text-center overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-secondary-black via-background to-background opacity-60"></div>
 
-      <div className="absolute top-10 left-3 sm:left-5 md:top-20 md:left-10 w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-primary/20 rounded-full blur-[100px]"></div>
+      <div className="absolute top-32 left-3 sm:left-5 md:top-40 md:left-10 w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-primary/20 rounded-full blur-[100px]"></div>
       <div className="absolute bottom-32 right-3 sm:right-5 md:bottom-40 md:right-10 w-52 h-52 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[120px]"></div>
 
       <div className="relative z-10 max-w-7xl px-2 sm:px-4">
