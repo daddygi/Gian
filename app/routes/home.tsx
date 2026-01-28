@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import ProjectsHighlight from "../components/ProjectsHighlight";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
@@ -14,11 +15,20 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Nav />
-      <Hero />
-      <About />
-      <ProjectsHighlight />
+      <section id="home" className="scroll-mt-20">
+        <Hero />
+      </section>
+      <section id="about" className="scroll-mt-20">
+        <About />
+      </section>
+      <section id="projects" className="scroll-mt-20">
+        <ProjectsHighlight />
+      </section>
+      <section id="contact" className="scroll-mt-20">
+        <Contact />
+      </section>
       <Footer />
     </div>
   );
