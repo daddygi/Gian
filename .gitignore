@@ -5,3 +5,40 @@
 # React Router
 /.react-router/
 /build/
+
+# IDE / Editor configs
+.cursor/
+.windsurf/
+.vscode/
+.idea/
+
+# AI assistants
+.agent/
+.agents/
+.claude/
+.cline/
+.codebuddy/
+.codex/
+.commandcode/
+.continue/
+.crush/
+.factory/
+.gemini/
+.goose/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.opencode/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.zencoder/
+skills/

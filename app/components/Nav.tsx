@@ -1,12 +1,22 @@
-import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Logo from "../components/Logo";
-import Button from "../components/Button";
+import { useScrolled } from "../hooks/useScrolled";
+import { useActiveSection } from "../hooks/useActiveSection";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About Me" },
+  { href: "#projects", label: "My Works" },
+  { href: "#contact", label: "Contact" },
+];
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const isScrolled = useScrolled(50);
+  const sectionIds = useMemo(() => navLinks.map((link) => link.href.slice(1)), []);
+  const activeSection = useActiveSection(sectionIds);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -24,32 +34,57 @@ export function Nav() {
     }
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.slice(1);
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    if (isOpen) {
+      handleClose();
+    }
+  };
+
   return (
-    <nav className="relative px-4 sm:px-6 md:px-10 py-4 md:py-6">
-      <div className="flex justify-between items-center">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-10 py-4 md:py-6 transition-all duration-300 ${
+        isScrolled
+          ? "bg-primary-black/80 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Logo />
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 lg:gap-12">
-          <Link
-            to="/"
-            className="text-xs font-medium text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
+          {navLinks.slice(0, -1).map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`nav-link relative text-xs font-medium uppercase tracking-wider transition-colors ${
+                activeSection === link.href.slice(1)
+                  ? "text-primary"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {link.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === link.href.slice(1) ? "w-full" : "w-0"
+                }`}
+              />
+            </a>
+          ))}
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className={`inline-block font-medium text-white rounded-full transition-all duration-300 bg-primary hover:bg-[#ff7d2e] hover:scale-105 active:scale-95 px-6 py-2.5 text-sm`}
           >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="text-xs font-medium text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-          >
-            About Me
-          </Link>
-          <Link
-            to="/works"
-            className="text-xs font-medium text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-          >
-            My Works
-          </Link>
-          <Button to="/contact">Contact</Button>
+            Contact
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -75,34 +110,24 @@ export function Nav() {
       {/* Mobile Nav */}
       {isOpen && (
         <div
-          className={`absolute top-full left-0 right-0 md:hidden bg-primary-black border-t border-gray-800 shadow-2xl px-6 py-8 flex flex-col gap-8 z-50 ${
+          className={`absolute top-full left-0 right-0 md:hidden bg-primary-black/95 backdrop-blur-md border-t border-gray-800 shadow-2xl px-6 py-8 flex flex-col gap-8 z-50 ${
             isClosing ? "animate-fade-out-up" : "animate-fade-in-down"
           }`}
         >
-          <Link
-            to="/"
-            onClick={handleClose}
-            className="text-sm font-medium text-gray-400 hover:text-primary transition-colors uppercase tracking-wider text-center py-2"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            onClick={handleClose}
-            className="text-sm font-medium text-gray-400 hover:text-primary transition-colors uppercase tracking-wider text-center py-2"
-          >
-            About Me
-          </Link>
-          <Link
-            to="/works"
-            onClick={handleClose}
-            className="text-sm font-medium text-gray-400 hover:text-primary transition-colors uppercase tracking-wider text-center py-2"
-          >
-            My Works
-          </Link>
-          <div className="flex justify-center pt-2">
-            <Button to="/contact">Contact</Button>
-          </div>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`text-sm font-medium uppercase tracking-wider text-center py-2 transition-colors ${
+                activeSection === link.href.slice(1)
+                  ? "text-primary"
+                  : "text-gray-400 hover:text-primary"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       )}
     </nav>
