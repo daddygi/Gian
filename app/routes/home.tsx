@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:title", content: "Gian Vince Limbaga | Full Stack Developer" },
     { property: "og:description", content: "Full Stack Developer based in Metro Manila, Philippines. Building modern web applications." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://gianvince.xyz" },
+    { property: "og:url", content: "https://www.gianvince.xyz" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Gian Vince Limbaga | Full Stack Developer" },
     { name: "twitter:description", content: "Full Stack Developer based in Metro Manila, Philippines." },
