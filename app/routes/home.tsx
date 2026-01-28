@@ -8,8 +8,16 @@ import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Gian" },
-    { name: "description", content: "Gian's Website" },
+    { title: "Gian Vince Limbaga | Full Stack Developer" },
+    { name: "description", content: "Gian Vince Limbaga is a Full Stack Developer based in Metro Manila, Philippines. Specializing in React, TypeScript, Node.js, and modern web applications." },
+    { name: "keywords", content: "Gian Vince Limbaga, Full Stack Developer, Web Developer, React Developer, Manila, Philippines" },
+    { property: "og:title", content: "Gian Vince Limbaga | Full Stack Developer" },
+    { property: "og:description", content: "Full Stack Developer based in Metro Manila, Philippines. Building modern web applications." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://gianvince.xyz" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Gian Vince Limbaga | Full Stack Developer" },
+    { name: "twitter:description", content: "Full Stack Developer based in Metro Manila, Philippines." },
   ];
 }
 
