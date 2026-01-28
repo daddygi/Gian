@@ -19,8 +19,8 @@ export function useScrollAnimation<T extends HTMLElement = HTMLElement>(
         }
       },
       {
-        threshold: options.threshold ?? 0.3,
-        rootMargin: options.rootMargin ?? "-100px",
+        threshold: options.threshold ?? 0.15,
+        rootMargin: options.rootMargin ?? "0px",
       }
     );
 
